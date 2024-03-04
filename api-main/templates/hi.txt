@@ -1,3 +1,0 @@
-Привет!
-
-Настройки доступны по ссылке: https://doka.guide/subscribe/index.html?hash={{ hash }}
