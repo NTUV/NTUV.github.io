@@ -1,0 +1,56 @@
+/* Button */
+
+.button {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-gap: 4px;
+  margin: 0;
+  padding: var(--padding-button, 4px);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  appearance: none;
+}
+
+.button:focus {
+  border-bottom: 1px solid var(--color-primary, lightblue);
+}
+
+.button__icon {
+  object-fit: contain;
+  width: auto;
+  max-width: unset;
+  margin: 0;
+}
+
+.button__title {
+  color: var(--color-text, black);
+  font-weight: lighter;
+  font-size: 1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Button Stycky */
+
+.button--sticky {
+  padding: var(--padding-button, 4px) 0;
+}
+
+.button--sticky .button__title {
+  display: none;
+}
+
+@media (min-width: 392px) {
+  .button--sticky .button__title {
+    display: block;
+  }
+}
+
+@media (min-width: 802px) {
+  .button--sticky .button__title {
+    display: none;
+  }
+}

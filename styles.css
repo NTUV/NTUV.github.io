@@ -1,0 +1,128 @@
+/* Fonts */
+
+@import 'fonts.css';
+
+/* Blocks */
+
+@import 'blocks/box-sizing.css';
+@import 'blocks/outline.css';
+@import 'blocks/visually-hidden.css';
+@import 'blocks/button.css';
+@import 'blocks/video.css';
+@import 'blocks/page.css';
+@import 'blocks/block.css';
+@import 'blocks/content.css';
+@import 'blocks/languages.css';
+@import 'blocks/header.css';
+@import 'blocks/footer.css';
+@import 'blocks/footer-menu.css';
+@import 'blocks/news.css';
+@import 'blocks/main.css';
+@import 'blocks/entrants.css';
+@import 'blocks/students.css';
+@import 'blocks/postgraduates.css';
+@import 'blocks/contacts.css';
+@import 'blocks/news-card.css';
+@import 'blocks/key-card.css';
+@import 'blocks/read-card.css';
+@import 'blocks/contact-card.css';
+@import 'blocks/link-card.css';
+@import 'blocks/social-list.css';
+@import 'blocks/dep-list.css';
+@import 'blocks/spec-card.css';
+
+:root {
+  --color-accent: #f5df4d;
+  --color-background: #ffffff;
+  --color-dark: #939597;
+  --color-light: #f0eee9;
+  --color-primary: #8cacd3;
+  --color-secondary: #c2bfb5;
+  --color-text: #363b48;
+
+  /* Text sizes */
+
+  --text-size-title: 19px;
+
+  --text-size-paragraph-small: 14px;
+  --text-size-header-1-small: 28px;
+  --text-size-header-2-small: 21px;
+  --text-size-header-3-small: 16px;
+  --text-size-header-4-small: 14px;
+  --text-size-header-5-small: 12px;
+  --text-size-header-6-small: 10px;
+  --text-size-quotation-small: 16px;
+
+  --text-size-paragraph-medium: 16px;
+  --text-size-header-1-medium: 32px;
+  --text-size-header-2-medium: 24px;
+  --text-size-header-3-medium: 19px;
+  --text-size-header-4-medium: 16px;
+  --text-size-header-5-medium: 13px;
+  --text-size-header-6-medium: 11px;
+  --text-size-quotation-medium: 19px;
+
+  --text-size-paragraph-large: 20px;
+  --text-size-header-1-large: 40px;
+  --text-size-header-2-large: 30px;
+  --text-size-header-3-large: 23px;
+  --text-size-header-4-large: 20px;
+  --text-size-header-5-large: 17px;
+  --text-size-header-6-large: 13px;
+  --text-size-quotation-large: 23px;
+
+  --line-height-paragraph-small: 21px;
+  --line-height-header-1-small: 42px;
+  --line-height-header-2-small: 32px;
+  --line-height-header-3-small: 25px;
+  --line-height-header-4-small: 21px;
+  --line-height-header-5-small: 17px;
+  --line-height-header-6-small: 14px;
+  --line-height-quotation-small: 25px;
+
+  --line-height-paragraph-medium: 24px;
+  --line-height-header-1-medium: 48px;
+  --line-height-header-2-medium: 36px;
+  --line-height-header-3-medium: 28px;
+  --line-height-header-4-medium: 24px;
+  --line-height-header-5-medium: 20px;
+  --line-height-header-6-medium: 16px;
+  --line-height-quotation-medium: 28px;
+
+  --line-height-paragraph-large: 30px;
+  --line-height-header-1-large: 60px;
+  --line-height-header-2-large: 45px;
+  --line-height-header-3-large: 35px;
+  --line-height-header-4-large: 30px;
+  --line-height-header-5-large: 25px;
+  --line-height-header-6-large: 20px;
+  --line-height-quotation-large: 35px;
+
+  /* Block Sizes */
+
+  --text-caption-small: 32px;
+  --text-header-small: 14px;
+  --text-content-small: 14px;
+  --text-contact-small: 13px;
+  --text-info-small: 11px;
+  --text-list-header-small: 16px;
+
+  --text-caption-medium: 37px;
+  --text-header-medium: 16px;
+  --text-content-medium: 16px;
+  --text-contact-medium: 15px;
+  --text-info-medium: 13px;
+  --text-list-header-medium: 18px;
+
+  --text-caption-large: 39px;
+  --text-header-large: 18px;
+  --text-content-large: 18px;
+  --text-contact-large: 17px;
+  --text-info-large: 14px;
+  --text-list-header-large: 21px;
+
+  --text-size-button-medium: 16px;
+
+  --padding-button: 0.63em;
+  --padding-default: 1em;
+}

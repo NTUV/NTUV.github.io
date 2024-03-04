@@ -1,0 +1,53 @@
+/* Read Card */
+
+.read-card {
+  display: grid;
+  grid-template: 'content image' 'info image';
+  grid-gap: 4px;
+  padding: 8px 16px;
+}
+
+.read-card__content {
+  grid-area: content;
+}
+
+.read-card--active .read-card__content {
+  font-weight: bold;
+}
+
+.read-card__image {
+  grid-area: image;
+  width: 80px;
+  height: 80px;
+  margin: 0;
+}
+
+@media (min-width: 520px) {
+  .read-card__image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.read-card__info {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-area: info;
+  justify-content: start;
+  grid-gap: 0.25em;
+}
+
+.read-card__created {
+  display: block;
+}
+
+.read-card__reading-time {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0.25em;
+}
+
+.read-card__reading-time::before {
+  display: block;
+  content: '•';
+}

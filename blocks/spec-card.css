@@ -1,0 +1,35 @@
+/* Spec Card */
+
+.spec-card__spec-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) max-content;
+  align-items: center;
+  grid-row-gap: 8px;
+  grid-column-gap: 16px;
+  padding: 8px 16px;
+}
+
+.spec-card__info-circle {
+  display: grid;
+  grid-template-rows: 80px min-content;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 8px;
+  width: 80px;
+}
+
+.spec-card__info-legend {
+  text-align: center;
+}
+
+.spec-card__info-exams {
+  align-self: start;
+  margin: 8px 0;
+  padding: 0;
+}
+
+.spec-card__info-exam {
+  list-style: none;
+}

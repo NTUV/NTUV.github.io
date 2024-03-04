@@ -1,0 +1,32 @@
+---
+title: 'Contacts of Physics Faculty of VSU'
+layout: 'page.en.njk'
+permalink: '/en/contacts.html'
+---
+<main class="contacts">
+  <div class="contacts__map">
+    <a class="contacts__map-link" href="https://goo.gl/maps/8oJXuz6TMyb7RpQA8" title="Physics Faculty is in the main building">
+      <img class="contacts__map-image"
+        srcset="
+          /images/map/g-map-320.jpeg 320w,
+          /images/map/g-map-375.jpeg 375w,
+          /images/map/g-map-414.jpeg 414w,
+          /images/map/g-map-640.jpeg 640w"
+        sizes="(min-width: 640px) 640px, (min-width: 414px) 414px, (min-width: 375px) 375px, 320px"
+        src="/images/map/g-map-320.jpeg"
+        alt="Physics Faculty is one of oldest faculties of VSU. It places in the main building"
+      >
+    </a>
+  </div>
+  <div class="contacts__dep-contact block">
+    <h2 class="contacts__dep-contact-title block__list-header">Dean's office</h2>
+    {% include 'dep-contact.en.njk' %}
+  </div>
+  <div class="contacts__dean-contact block">
+    {% include 'dean-contact.en.njk' %}
+  </div>
+  <div class="contacts__dep-list block">
+    <h2 class="contacts__dep-list-title block__list-header">Departments</h2>
+    {% include 'dep-list.en.njk' %}
+  </div>
+</main>

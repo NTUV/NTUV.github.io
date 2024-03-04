@@ -1,0 +1,13 @@
+/* Languages */
+
+.languages, .languages__flag {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+}
+
+.languages__flag-icon {
+  width: 24px;
+  height: 24px;
+}

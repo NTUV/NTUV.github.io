@@ -1,0 +1,57 @@
+name: Обновление новостей
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    env:
+      USER: ${{ secrets.FTP_USER }}
+      HOST: ${{ secrets.FTP_HOST }}
+      PASS: ${{ secrets.FTP_PASS }}
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Установка lftp
+        run: |
+          sudo apt install lftp
+      - name: Кэширование модулей
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Установка пакетов
+        run: npm ci
+      - name: Обновление новостей
+        run: npx gulp news
+      - name: Получение текущей даты
+        id: t1
+        uses: Kaven-Universe/github-action-current-date-time@v1
+        with:
+          format: "YYYY_MM_DD HH_mm_ss_SSS"
+      - name: Создание Pull Request'а
+        id: pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Обновление новостей
+          branch: news-${{ steps.t1.outputs.day }}-${{ steps.t1.outputs.month }}-${{ steps.t1.outputs.year }}
+          delete-branch: true
+          title: "Обновление новостей (${{ steps.t1.outputs.day_of_week }}, ${{ steps.t1.outputs.day }} ${{ steps.t1.outputs.month }})"
+          labels: |
+            новости
+          reviewers: igsekor
+          draft: false

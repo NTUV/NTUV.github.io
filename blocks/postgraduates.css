@@ -1,0 +1,7 @@
+/* Postgraduates */
+
+.postgraduates {
+  display: grid;
+  grid-auto-flow: row;
+  margin: 32px 0;
+}

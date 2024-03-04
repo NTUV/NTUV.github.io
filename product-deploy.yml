@@ -1,0 +1,53 @@
+name: Публикация
+
+on:
+  workflow_run:
+    workflows:
+      - "Орфография"
+    branches:
+      - main
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      USER: ${{ secrets.FTP_USER }}
+      HOST: ${{ secrets.FTP_HOST }}
+      PASS: ${{ secrets.FTP_PASS }}
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Установка lftp
+        run: |
+          sudo apt install lftp
+      - name: Кэширование модулей
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Установка пакетов
+        run: npm ci
+      - name: Сборка сайта
+        run: npm run build
+      - name: Публикация сайта
+        run: |
+          cd dist
+          lftp -u "$USER","$PASS" $HOST <<EOF
+          set ssl:verify-certificate no
+          set sftp:auto-confirm yes
+          mirror --verbose=1,2,3 --ignore-time --scan-all-first --reverse --parallel=4 ./
+          exit
+          EOF

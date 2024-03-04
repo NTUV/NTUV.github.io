@@ -1,0 +1,44 @@
+/* Link Card */
+
+.link-card {
+  display: grid;
+  grid-template: 'image content' 'image contact';
+  grid-template-columns: 44px auto;
+  justify-content: start;
+  grid-gap: 4px;
+  width: 100%;
+  padding: 8px 16px;
+}
+
+.link-card__contact-icon {
+  grid-area: image;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+@media (min-width: 375px) {
+  .link-card__contact-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 520px) {
+  .link-card__contact-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.link-card__header {
+  grid-area: content;
+}
+
+.link-card__content {
+  grid-area: content;
+}
+
+.link-card__contact {
+  grid-area: contact;
+}
